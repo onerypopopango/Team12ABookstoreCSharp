@@ -19,5 +19,11 @@ namespace SA46Team12BookShopApp
         [OperationContract]
         [WebGet(UriTemplate = "/Books/{name}", ResponseFormat = WebMessageFormat.Json)]
         List<Book> SearchBookByName(string name);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/Update", Method = "POST",
+        RequestFormat = WebMessageFormat.Json,
+        ResponseFormat = WebMessageFormat.Json)]
+        void Update(Book book);
     }
 }

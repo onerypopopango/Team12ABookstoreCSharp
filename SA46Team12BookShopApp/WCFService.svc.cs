@@ -20,5 +20,10 @@ namespace SA46Team12BookShopApp
         {
             return BusinessLogic.SearchBookByName(name);
         }
+
+        public void Update(Book book)
+        {
+            BusinessLogic.UpdateBook(book);
+        }
     }
 }

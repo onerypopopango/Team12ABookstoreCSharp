@@ -129,5 +129,19 @@ namespace SA46Team12BookShopApp
             return searchResult;
         }
 
+        public static void UpdateBook(Book book)
+        {
+            BooksDB bdb = new BooksDB();
+            Book b = (Book) bdb.Books.Where(x => x.BookID.Equals(book.BookID));
+
+            b.Title = book.Title;
+            b.Price = book.Price;
+            b.Stock = book.Stock;
+
+            //b.Title = b.Title.Replace(s, title);
+
+            bdb.SaveChanges();
+        }
+
     }
 }
