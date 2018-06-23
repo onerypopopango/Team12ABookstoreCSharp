@@ -132,11 +132,15 @@ namespace SA46Team12BookShopApp
         public static void UpdateBook(Book book)
         {
             BooksDB bdb = new BooksDB();
-            Book b = (Book) bdb.Books.Where(x => x.BookID.Equals(book.BookID));
+            Book b = bdb.Books.Where(x => x.BookID == book.BookID).First();
 
             b.Title = book.Title;
             b.Price = book.Price;
             b.Stock = book.Stock;
+            b.Author = book.Author;
+            b.BookID = book.BookID;
+            b.CategoryID = book.CategoryID;
+            b.ISBN = book.ISBN;
 
             //b.Title = b.Title.Replace(s, title);
 

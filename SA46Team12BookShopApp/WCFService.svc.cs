@@ -21,8 +21,18 @@ namespace SA46Team12BookShopApp
             return BusinessLogic.SearchBookByName(name);
         }
 
-        public void Update(Book book)
+        public void Update(WCFBook wcfBook)
         {
+            Book book = new Book();
+            book.Author = wcfBook.Author;
+            book.BookID = wcfBook.BookID;
+            book.CategoryID = wcfBook.CategoryID;
+            book.ISBN = Convert.ToString(wcfBook.ISBN1);
+            book.Price = Convert.ToDecimal(wcfBook.Price);
+            book.Stock = wcfBook.Stock;
+            book.Title = wcfBook.Title;
+
+
             BusinessLogic.UpdateBook(book);
         }
     }

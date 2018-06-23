@@ -24,6 +24,40 @@ namespace SA46Team12BookShopApp
         [WebInvoke(UriTemplate = "/Update", Method = "POST",
         RequestFormat = WebMessageFormat.Json,
         ResponseFormat = WebMessageFormat.Json)]
-        void Update(Book book);
+        void Update(WCFBook book);
     }
+
+    [DataContract]
+    public class WCFBook
+    {
+        string author;
+        int bookID;
+        int categoryID;
+        long ISBN;
+        double price;
+        int stock;
+        string title;
+
+        [DataMember]
+        public string Author { get => author; set => author = value; }
+
+        [DataMember]
+        public int BookID { get => bookID; set => bookID = value; }
+
+        [DataMember]
+        public int CategoryID { get => categoryID; set => categoryID = value; }
+
+        [DataMember]
+        public long ISBN1 { get => ISBN; set => ISBN = value; }
+
+        [DataMember]
+        public double Price { get => price; set => price = value; }
+
+        [DataMember]
+        public int Stock { get => stock; set => stock = value; }
+
+        [DataMember]
+        public string Title { get => title; set => title = value; }
+    }
+
 }
